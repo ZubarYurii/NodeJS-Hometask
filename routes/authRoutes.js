@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const UserService = require('../services/userService');
+const AuthService = require('../services/authService');
 const { responseMiddleware } = require('../middlewares/response.middleware');
 
 const router = Router();
@@ -7,7 +7,7 @@ const router = Router();
 router.post('/login', async (req, res, next) => {
     try {
         const { email, password } = req.body;
-        const user = await UserService.search({ email });
+        const user = AuthService.login({ email })
         if (!user || password !== user.password) {
             return res.status(401).json({
                 status: "error",

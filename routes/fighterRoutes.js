@@ -9,21 +9,21 @@ const router = Router();
 
 router.get('/', async (req, res, next) => {
     try {
-        const users = await FighterService.getUsers();
+        const fighters = await FighterService.getFighters();
 
-        if (users.length === 0) {
+        if (fighters.length === 0) {
             return res.status(404).json({
                 status: "error",
                 code: 404,
                 data: "Not found",
-                message: "Users not found",
+                message: "Fighters not found",
             });
         }
         return res.status(200).json({
             status: "success",
             code: 200,
             data: {
-                users
+                fighters
             },
 
         });
@@ -35,20 +35,20 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const id = req.params.id;
-        const user = await FighterService.search({ id });
-        if (!user) {
+        const fighter = await FighterService.search({ id });
+        if (!fighter) {
             return res.status(404).json({
                 status: "error",
                 code: 404,
                 data: "Not found",
-                message: "User not found",
+                message: "Fighter not found",
             });
         }
         return res.status(200).json({
             status: "success",
             code: 200,
             data: {
-                user
+                fighter
             },
 
         });
@@ -61,8 +61,20 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        const user = req.body
-        const result = await FighterService.create(user);
+        const fighter = req.body
+        const { name } = fighter
+
+        if (await FighterService.search({ name })) {
+            return res.status(403).json({
+                status: 'forbiden',
+                code: 403,
+                data: {
+                    message: 'Name already exist'
+                }
+            })
+        }
+
+        const result = await FighterService.create(fighter);
 
         return res.status(201).json({
             status: 'success',
@@ -83,8 +95,8 @@ router.put('/:id', async (req, res, next) => {
     try {
         const id = req.params.id;
         const data = req.body;
-        const user = FighterService.update(id, data);
-        if (!user) {
+        const fighter = FighterService.update(id, data);
+        if (!fighter) {
             return res.status(404).json({
                 status: 'error',
                 code: 404,
@@ -95,7 +107,7 @@ router.put('/:id', async (req, res, next) => {
             status: 'success',
             code: 200,
             data: {
-                user,
+                fighter,
             },
         })
 
@@ -109,20 +121,20 @@ router.delete('/:id', (req, res, next) => {
 
     try {
         const id = req.params.id;
-        const user = FighterService.remove(id);
-        if (!user) {
+        const fighter = FighterService.remove(id);
+        if (!usefighterr) {
 
             return res.status(404).json({
                 status: 'error',
                 code: 404,
-                data: 'User not Found',
+                data: 'Fighter not Found',
             })
         }
 
         return res.json({
             status: 'success',
             code: 200,
-            message: 'user deleted successfully'
+            message: 'Fighter deleted successfully'
         })
     } catch (e) {
         next(e)

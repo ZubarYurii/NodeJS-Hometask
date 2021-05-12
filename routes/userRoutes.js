@@ -62,6 +62,38 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try {
         const user = req.body
+        const { email, name, phoneNumber } = user
+
+        if (await UserService.search({ email })) {
+            return res.status(403).json({
+                status: 'forbiden',
+                code: 403,
+                data: {
+                    message: 'Email already exist'
+                }
+            })
+        }
+
+        if (await UserService.search({ name })) {
+            return res.status(403).json({
+                status: 'forbiden',
+                code: 403,
+                data: {
+                    message: 'Name already exist'
+                }
+            })
+        }
+
+        if (await UserService.search({ phoneNumber })) {
+            return res.status(403).json({
+                status: 'forbiden',
+                code: 403,
+                data: {
+                    message: 'PhoneNumber already exist'
+                }
+            })
+        }
+
         const result = await UserService.create(user);
 
         return res.status(201).json({

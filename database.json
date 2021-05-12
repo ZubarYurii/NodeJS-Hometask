@@ -4,18 +4,25 @@
       "name": "kool",
       "email": "q@gmail.com",
       "password": "123",
-      "id": "f1e5684a-c23f-4294-8f1a-3d429c2a818c",
-      "createdAt": "2021-05-12T14:35:04.037Z",
-      "updatedAt": "2021-05-12T14:48:45.764Z"
+      "id": "aa96dd3e-99ed-480d-97a7-7c1dbca45cd6",
+      "createdAt": "2021-05-12T17:54:25.302Z"
     },
     {
-      "name": "emoty",
+      "name": "roma",
       "email": "q@gmail.com",
       "password": "123",
-      "id": "af5f8702-8041-4bc2-9c16-ae0ec3ccb0fd",
-      "createdAt": "2021-05-12T14:45:39.518Z"
+      "id": "c656365c-5052-4ffa-beb8-8384f49fa28e",
+      "createdAt": "2021-05-12T17:54:34.506Z"
     }
   ],
-  "fighters": [],
+  "fighters": [
+    {
+      "name": "roy",
+      "health": "100",
+      "attack": "5",
+      "id": "27e4c4ad-85af-47bd-93a9-efac4bd027a0",
+      "createdAt": "2021-05-12T18:09:26.286Z"
+    }
+  ],
   "fights": []
 }
