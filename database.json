@@ -1,5 +1,21 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "kool",
+      "email": "q@gmail.com",
+      "password": "123",
+      "id": "f1e5684a-c23f-4294-8f1a-3d429c2a818c",
+      "createdAt": "2021-05-12T14:35:04.037Z",
+      "updatedAt": "2021-05-12T14:48:45.764Z"
+    },
+    {
+      "name": "emoty",
+      "email": "q@gmail.com",
+      "password": "123",
+      "id": "af5f8702-8041-4bc2-9c16-ae0ec3ccb0fd",
+      "createdAt": "2021-05-12T14:45:39.518Z"
+    }
+  ],
   "fighters": [],
   "fights": []
 }
