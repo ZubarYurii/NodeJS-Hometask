@@ -12,7 +12,7 @@ class UserService {
 
         const users = await UserRepository.getAll();
         if (!users) {
-            return null;
+            return;
         }
         return users;
     }

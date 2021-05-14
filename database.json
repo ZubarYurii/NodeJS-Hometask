@@ -1,27 +1,13 @@
 {
-  "users": [
-    {
-      "name": "kool",
-      "email": "q@gmail.com",
-      "password": "123",
-      "id": "aa96dd3e-99ed-480d-97a7-7c1dbca45cd6",
-      "createdAt": "2021-05-12T17:54:25.302Z"
-    },
-    {
-      "name": "roma",
-      "email": "q@gmail.com",
-      "password": "123",
-      "id": "c656365c-5052-4ffa-beb8-8384f49fa28e",
-      "createdAt": "2021-05-12T17:54:34.506Z"
-    }
-  ],
+  "users": [],
   "fighters": [
     {
-      "name": "roy",
+      "name": "tye",
       "health": "100",
       "attack": "5",
-      "id": "27e4c4ad-85af-47bd-93a9-efac4bd027a0",
-      "createdAt": "2021-05-12T18:09:26.286Z"
+      "id": "22d102e8-0d5f-4ed5-84ca-6878c0344d94",
+      "createdAt": "2021-05-14T05:26:29.044Z",
+      "updatedAt": "2021-05-14T05:27:09.244Z"
     }
   ],
   "fights": []

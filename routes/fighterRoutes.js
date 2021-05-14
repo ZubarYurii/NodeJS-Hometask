@@ -122,7 +122,7 @@ router.delete('/:id', (req, res, next) => {
     try {
         const id = req.params.id;
         const fighter = FighterService.remove(id);
-        if (!usefighterr) {
+        if (!fighter) {
 
             return res.status(404).json({
                 status: 'error',
